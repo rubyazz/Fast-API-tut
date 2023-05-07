@@ -10,6 +10,12 @@ class Item(BaseModel):
 	name:str
 	price:float
 	is_offer: Union[bool, None] = None
+
+
+class Player(BaseModel):
+	name:str
+	description:str
+	is_offer: Union[bool, None] = None
 		
 
 @app.get("/")
@@ -27,5 +33,7 @@ def read_item(item_id : int, item: Item):
 @app.get("/routes")
 def get_routes():
 	return {"Cool ":"ROUTES"}
+
+
 
 
